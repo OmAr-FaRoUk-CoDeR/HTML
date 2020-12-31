@@ -8,19 +8,19 @@
 <body>
   <header>
     <a href="#home" class="logo">faeder</a>
-    <div class="toggle"></div>
-    <ul>
-      <li><a href="#home">الصفحه الرئيسية</a></li>
-      <li><a href="#services">الخدمات</a></li>
-      <li><a href="#about">حول</a></li>
-      <li><a href="#">لمراسلتنا</a></li>
+    <div class="toggle" onclick="toggleMenu();"></div>
+    <ul class="menu">
+      <li><a href="#home" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+      <li><a href="#services" onclick="toggleMenu();">الخدمات</a></li>
+      <li><a href="#about" onclick="toggleMenu();">حول</a></li>
+      <li><a href="https://t.me/kkkkf" alt="_blank" onclick="toggleMenu();">لمراسلتنا</a></li>
     </ul>
   </header>
   <section class="banner" id="home">
     <div class="textBx">
       <h2>Hello I'm<br><span>Anwar Nadm</span></h2>
       <h3>أنا مطور بوتات تيليجرام</h3>
-      <a href="#" class="btn">عني</a>
+      <a href="#about" class="btn">حولي</a>
     </div>
   </section>
   <section class="about" id="about">
@@ -57,58 +57,99 @@
         <a href="#">للدخول الى البوت</a>
       </div>
       <div class="servicesBx">
-        <img src="image/icon1.png">
-        <h2>بوت تمويل قنوات</h2>
-        <p>اختصاصه حماية المجموعات من التفليش والسبام والخخ .. . ، قم برفعه ادمن في مجموعتك وارسل ( تفعيل ) سيتم رفع الادمنيه والمنشئ تلقائيا</p>
+        <img src="image/planet.png">
+        <h2>بوت توقعات الابراج</h2>
+        <br>
+        <p>بوت توقع برجك تحديث يومي لتوقعات الابراج</p>
+        <a href="#">للدخول الى البوت</a>
+      </div>
+      <div class="servicesBx">
+        <img src="image/youtube.png">
+        <h2>بوت تحميل من اليوتيوب</h2>
+        <p>بوت التحميل من اليوتيوب ايضا يمكنك بواسطته التحميل من الانستا ، تيك توك ، تويتر ، فيسبوك</p>
         <br>
         <a href="#">للدخول الى البوت</a>
       </div>
       <div class="servicesBx">
-        <img src="image/icon1.png">
-        <h2>بوت حماية المجموعات</h2>
-        <p>اختصاصه حماية المجموعات من التفليش والسبام والخخ .. . ، قم برفعه ادمن في مجموعتك وارسل ( تفعيل ) سيتم رفع الادمنيه والمنشئ تلقائيا</p>
+        <img src="image/edit.png">
+        <h2>بوت الزخرفه</h2>
+        <p>قم بزخرفه اسمك تمبلر</p>
         <br>
         <a href="#">للدخول الى البوت</a>
       </div>
       <div class="servicesBx">
-        <img src="image/icon1.png">
-        <h2>بوت حماية المجموعات</h2>
-        <p>اختصاصه حماية المجموعات من التفليش والسبام والخخ .. . ، قم برفعه ادمن في مجموعتك وارسل ( تفعيل ) سيتم رفع الادمنيه والمنشئ تلقائيا</p>
+        <img src="image/instagram.png">
+        <h2>تحميل ستوريات انستا</h2>
+        <p>بوت التحميل من الانستكرام قم بتحميل الستوريات التي تعجبك الان</p>
         <br>
         <a href="#">للدخول الى البوت</a>
       </div>
       <div class="servicesBx">
-        <img src="image/icon1.png">
-        <h2>بوت حماية المجموعات</h2>
-        <p>اختصاصه حماية المجموعات من التفليش والسبام والخخ .. . ، قم برفعه ادمن في مجموعتك وارسل ( تفعيل ) سيتم رفع الادمنيه والمنشئ تلقائيا</p>
+        <img src="image/image.png">
+        <h2>بوت تصميم الصور المتميز</h2>
+        <p>بوت تصميم الصور يمكن تصميم اسمك بالكثير من الاشكال</p>
         <br>
         <a href="#">للدخول الى البوت</a>
       </div>
       <div class="servicesBx">
-        <img src="image/icon1.png">
-        <h2>بوت حماية المجموعات</h2>
-        <p>اختصاصه حماية المجموعات من التفليش والسبام والخخ .. . ، قم برفعه ادمن في مجموعتك وارسل ( تفعيل ) سيتم رفع الادمنيه والمنشئ تلقائيا</p>
+        <img src="image/file.png">
+        <h2>بوت تحويل الصيغ</h2>
+        <p>بوت تحويل الصيغ يتيح لك تحويل كل الصيغ</p>
         <br>
         <a href="#">للدخول الى البوت</a>
       </div>
       <div class="servicesBx">
-        <img src="image/icon1.png">
-        <h2>بوت حماية المجموعات</h2>
-        <p>اختصاصه حماية المجموعات من التفليش والسبام والخخ .. . ، قم برفعه ادمن في مجموعتك وارسل ( تفعيل ) سيتم رفع الادمنيه والمنشئ تلقائيا</p>
+        <img src="image/robot.png">
+        <h2>صنع ازرار ماركداون</h2>
+        <p>بوت صنع الازرار يتيح لك صنع منشور بازرار شفافه</p>
         <br>
         <a href="#">للدخول الى البوت</a>
+      </div>
+      <div class="servicesBx">
+        <img src="image/msg.png">
+        <h2>مصنع بوتات تواصل</h2>
+        <p>مصنع بوتات تواصل يتيح لك صنع بوت لتواصل المحظورين</p>
+        <br>
+        <a href="#">للدخول الى البوت</a>
+      </div>
+      <div class="servicesBx">
+        <img src="image/sayat.png">
+        <h2>مصنع بوتات سايت</h2>
+        <p>مصنع بوتات سايت يتيح لك صنع بوت سايت لتواصل معك متابعيك بسريه</p>
+        <br>
+        <a href="#">للدخول الى البوت</a>
+      </div>
+      <div class="servicesBx">
+        <img src="image/chip.png">
+        <h2>مصنع بوتات زخرفه</h2>
+        <p>مصنع بوتات زخرفه يتيح لك صنع بوت زخرفه متطور</p>
+        <br>
+        <a href="#">للدخول الى البوت</a>
+      </div>
+      <div class="servicesBx">
+        <img src="image/chip.png">
+        <h2>تنصيب سورس فايدر</h2>
+        <p>لتنصيب سورس فايدر</p>
+        <a href="#">اضغط هنا</a>
       </div>
     </div>
   </section>
 
-
-  <!--next contact write-->
+  <div class="copyright">
+    <p>Copyright © 2021 Omar Farooq. All Right Reserved</p>
+  </div>
   <!--next mobile write-->
   <script type="text/javascript">
   window.addEventListener('scroll', function(){
     var header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 0);
   })
+  function toggleMenu(){
+    var menuToggle = document.querySelector('.toggle');
+    var menu = document.querySelector('.menu');
+    menuToggle.classList.toggle('active')
+    menu.classList.toggle('active')
+  }
   </script>
 </body>
 </html>
