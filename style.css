@@ -119,7 +119,7 @@ header.sticky ul li a{
     min-width: 50%;
 }
 video{
-    max-width: 50%;
+    max-width: 100%;
 }
 .services{
     background: #111;
