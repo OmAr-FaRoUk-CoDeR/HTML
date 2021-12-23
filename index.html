@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>PRO-SCHOOL</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, intial-scale-1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+<body>
+  <header>
+    <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+    <div class="toggle" onclick="toggleMenu();"></div>
+    <ul class="menu">
+      <li><a href="index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+      <li><a href="#about" onclick="toggleMenu();">حول الموقع</a></li>
+      <li><a href="#tracks" onclick="toggleMenu();">المسارات</a></li>
+    </ul>
+  </header>
+  <section class="banner" id="home">
+    <div class="textBx">
+      <h2>تريد ان تصبح<br><span>مبرمج ؟</span></h2>
+      <a href="#about" class="btn">عرض المزيد</a>
+    </div>
+  </section>
+  <section class="about" id="about">
+    <div class="heading">
+      <h2>حول الموقع</h2>
+    </div>
+    <div class="content">
+      <div class="contentBx">
+        <h3>مقدمة قصيرة جدًا عن البرمجة</h3>
+        <p>البرمجة ببساطة: <br><br> هي مجموعة الأوامر التي تعطيها للحاسوب، ليقوم الأخير بتنفيذها! هذه الأوامر تكون مكتوبةً بشكل “غريب” باللغة الإنجليزية!
+         <br><br> تظهر البرمجة في كلّ مكان، وبواسطتها يمكنك التحكم في الآلات، فمن روبوت يرعى المريض إلى آخر يبحث عن الماء في كوكب المريخ! أو صناعة ألعاب ممتعة مثل  <br>( Angry Birds, Minecraft…) ، أو تطوير موقع إلكتروني خاص بك على الويب, مِثْلَ هذا الموقع ، <br><br>فوراء كل موقعٍ مبرمجٌ يعدّ ما تراه على الشاشة بهذه الجمالية، ليصبح بإمكانك قراءة المقالات وتصفح الصور ببساطة. <br><br></p>
+      </div>
+      <div class="w50">
+        <img src="image/iconpr.png" alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <!--Start Tracks (1)-->
+  <section class="tracks" id="tracks">
+    <div class="s-heading">
+      <h1>المس<font color="#4a90e2">ار</font>ات</h1>
+      <p>اختر المسار الذي تريد البدء به</p>
+    </div>
+
+    <div class="s-box-container">
+
+      <!--box (1)-->
+      <div class="s-box">
+        <div class="bar"></div>
+        <img src="image/web-design.png" alt="1"/>
+        <h1>تصميم الويب</h1>
+        <p>المسار الكامل لإحتراف مجال ال Front-End Development بكل ما يحتويه المسار من دورات تعليمية وأدوات ونصائح ومواقع ومراجع تفيدك أثناء رحلة التعلم, إستعد للإبحار في رحلة التعلم :) وتأكد أنك إنتهيت من كل خطوة قبل الذهاب للخطوة التالية</p>
+        <a href="webDesign.html" class="s-btn">أضغط للبدء</a>
+      </div>
+
+      <!--box (2)-->
+      <div class="s-box">
+        <div class="bar"></div>
+        <img src="image/developer.png" alt="1"/>
+        <h1>تطوير الويب</h1>
+        <p>سنبدأ معًا تتبع مسار الدخول إلى هذا المجال الرائع، ويجب معرفة أن هذا المسار اتفق عليه الكثير من المتخصصين في المجال حيث ان اتباع المسار يكون بالترتيب حتى يمكنك الاستمرار في المجال بشكل صحيح مع الفهم السليم للخطوة التالية، فهو أشبه ببناء مكون من عدة طوابق</p>
+        <a href="#developerweb.html" class="s-btn">أضغط للبدء</a>
+      </div>
+
+      <!--box (3)-->
+      <div class="s-box">
+        <div class="bar"></div>
+        <img src="image/database.png"/>
+        <h1>قواعد البيانات</h1>
+        <p>يتم إعداد الطلاب لمتابعة المهنة وأن يكونون متخصصي إدارة قواعد البيانات وبالخصوص قواعد بيانات SQL، في نهاية البرنامج سوف يكتسب الطالب المهارات في موضوعات الإدارة الفاعلة لقواعد البيانات ، حل المشكلات التشغيلية اليومية والاسهام في رفع كفاءه التطبيقات.</p>
+        <a href="#data.html" class="s-btn">أضغط للبدء</a>
+      </div>
+      <!--box (4)-->
+      <div class="s-box">
+        <div class="bar"></div>
+        <img src="image/android.png" alt="1"/>
+        <h1>اندرويد</h1>
+        <p>يمكن تطوير <strong>Android</strong> على جهاز كمبيوتر يعمل بنظام <strong>Mac</strong> أو <strong>Windows PC</strong> أو <strong>Linux</strong> . ستحتاج أيضًا إلى جهاز <strong>Android</strong>  (هناك العديد من المحاكيات التي يمكنك استخدامها للتطوير ، ولكن في النهاية سترغب في الاختبار على جهاز محمول حقيقي).</p>
+        <a href="#andr.html" class="s-btn">أضغط للبدء</a>
+      </div>
+    </div>
+  </section>
+  <!--End Tracks (1)-->
+  
+
+  <footer>
+    <div class="footer-content">
+      <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+      <p>Made with <font color="red">♥</font> in Iraq</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+        <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>cobyrigth &copy;2021 Pro-School. designed by <span>Omar farooq</span></p>
+    </div>
+  </footer>
+  <!--next mobile write-->
+  <script type="text/javascript">
+  window.addEventListener('scroll', function(){
+    var header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0);
+  })
+  function toggleMenu(){
+    var menuToggle = document.querySelector('.toggle');
+    var menu = document.querySelector('.menu');
+    menuToggle.classList.toggle('active')
+    menu.classList.toggle('active')
+  }
+  </script>
+</body>
+</html>
