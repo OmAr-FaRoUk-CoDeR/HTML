@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, intial-scale-1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>Front-End Developer</title>
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">تمارين</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+      </header>
+      <section class="banner" id="home">
+        <div class="textBx">
+         <h2>مسار تصميم الويب</h2>
+         <p>- أليك ماتحتاج معرفته من تقنيات <br>- لتصبح محترف في مجال تصميم الويب</p>
+        </div>
+      </section>
+
+
+      <section class="about" id="about">
+        <div class="heading">
+          <h2><font color="#4a90e2">Front-End</font> Developer</h2>
+        </div>
+        <div class="content">
+          <div class="contentBx">
+            <h3>مقدمة عن Front-End Developer:</h3>
+            <p>إن الـ Front-end الخاص بالموقع هو ما تراه وتتفاعل معه في المتصفح، فهي تمثل واجهة المستخدم من نصوص أو ألوان أو أزرار أو صور. لو أردت مثلا أن تطور موقعا خاصا بمطعم فستضع المعلومات الخاصة بالمطعم سواء كان عنوان المطعم أو صورا للأطباق التي يقدمونها حتى يجذب الموقع العملاء. كل هذا يتم باستخدام تقنيات الـ Front-end.<br><br>هناك ثلاث لغات أساسية:<br><br><font class='bolds' color="#4a90e2">HTML</font> : هي لغة بناء هيكل الموقع الذي سيتم عرضه في المتصفح. <br><br><font class='bolds' color="#4a90e2">CSS</font> : تأتي مع لغة HTML ومنها تقوم بتحديد تنسيق الموقع من ألوان و تصميم وخطوط. <br><br><font class='bolds' color="#4a90e2">JavaScript</font> : هي لغة برمجة تستخدم أكثر في العناصر التفاعلية في الصفحة كالقوائم المنسدلة واستمارت الاتصال. <br><br>بالإضافة لهذه اللغات الأساسية توجد بعض الإضافات اللازمة لبناء أي موقع، على سبيل المثال بعض المكتبات الخاصة بـ CSS كمكتبة Bootstrap أو Materialize، بعض أطر العمل الخاصة بلغة Javascript كإطار Angular أو Vue أو React (مع ملاحظة أن React تعتبر مكتبة)، وبعض الإضافات الخاصة بـ CSS أيضا كـ SASS أو LESS.</p>
+          </div>
+          <div class="w50">
+            <img src="image/iconpr.png" alt="">
+          </div>
+        </div>
+      </section>
+      <!--Start Tracks (1)-->
+  <section class="tracks" id="tracks">
+    <div class="s-heading">
+      <h1><font color="#4a90e2">اللغات</font></h1>
+      <p>اللغات المطلوبه لتعلم هذا المسار</p>
+    </div>
+
+    <div class="s-box-container">
+
+      <!--box (1)-->
+      <div class="s-box">
+        <div class="bar"></div>
+        <img src="image/html.png" alt="1"/>
+        <h1>HTML</h1>
+        <p>لنبدأ بتعلم هيكلة الصفحه ،</p>
+        <a href="html1.html" class="s-btn">أضغط للتعلم!</a>
+      </div>
+      <!--box (2)-->
+      <div class="s-box">
+        <div class="bar"></div>
+        <img src="image/css.png" alt="1"/>
+        <h1>CSS</h1>
+        <p>لنبدأ بتعلم تصميم الصفحه ،</p>
+        <a href="css.html" class="s-btn">أضغط للتعلم!</a>
+      </div>
+
+      <!--box (3)-->
+      <div class="s-box">
+        <div class="bar"></div>
+        <img src="image/java-script.png"/>
+        <h1>JAVASCRIPT</h1>
+        <p>لنبدأ بتعلم برمجة الصفحه ،</p>
+        <a href="javascript.html" class="s-btn">أضغط للتعلم!</a>
+      </div>
+  </section>
+  <!--End Tracks (1)-->
+    
+
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span>Omar farooq</span></p>
+        </div>
+      </footer>
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>
