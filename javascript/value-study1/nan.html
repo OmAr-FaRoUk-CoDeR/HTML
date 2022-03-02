@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+    </header>
+      <!-- Language -->
+    <section>
+
+        <h2><code class="infin">NaN</code><br></h2>
+        <p>الخاصية العامة NaN هي قيمةٌ لا تُمثِّل عددًا (وهي اختصارٌ للعبارة Not-A-Number).</p><br>
+        <table id="customers">
+          <tr>
+              <th colspan="2">سمات الخاصية NaN</th>
+          </tr>
+          <tr>
+              <td>قابلة للكتابة</td>
+              <td>لا</td>
+          </tr>
+          <tr>
+            <td>قابلة للأحصاء</td>
+            <td>لا</td>
+        </tr>
+        <tr>
+          <td>قابلة للضبط</td>
+          <td>لا</td>
+      </tr>
+      
+      </table><br>
+      <p><span class="ober1">الوصف :</span><br>الخاصية NaN هي خاصيةٌ للكائن العام (global object) أي أنها متغيرٌ في المجال العام.<br>القيمة الابتدائية للخاصية NaN هي Number.NaN، والخاصية NaN غير قابلة للضبط وغير قابلة للكتابة في المتصفحات الحديثة، لكن مع ذلك حاول تجنّب الكتابة عليها.<br>من النادر استخدام القيمة NaN في البرامج، لكنها القيمة التي ستُعاد عندما تفشل دوال الكائن Math (مثل Math.sqrt(-1)‎) أو عند فشل تفسير قيمة رقمية (مثل ‎‎parseInt("blabla")‎).</p><br>
+      <p><span class="ober1">اختبار إذا كانت القيمة NaN</span><br>لا تساوي القيمة NaN (عبر معاملات المقارنة == و ‎!=‎ و === و ‎!==‎) أيّة قيمة أخرى، بما في ذلك قيم NaN الأخرى؛ لذا استخدام الدالة Number.isNaN()‎ أو الدالة isNaN()‎ لمعرفة إذا كانت القيمة المعنية هي NaN، أو جرب مقارنة القيمة مع نفسها، فالقيمة NaN هي القيمة الوحيدة التي لا تساوي نفسها.</p><br>
+
+      
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#E59866'>NaN <font color="#A4A5A5">==</font> NaN <font color="#A4A5A5">// false</font></font>
+    <font color='#E59866'>Number.NaN NaN <font color="#A4A5A5">===</font> NaN; <font color="#A4A5A5">// false</font></font>
+    <font color='#E59866'>isNaN(NaN); <font color="#A4A5A5">// true</font></font>
+    <font color='#E59866'>isNaN(Number.NaN); <font color="#A4A5A5">// true</font></font>
+
+    <font color='#E59866'>function <font color="#A4A5A5">valueIsNaN(v)</font> { return v !== v; }</font>
+    <font color='#A4A5A5'>valueIsNaN(1); <font color="#A4A5A5">// false</font></font>
+    <font color='#A4A5A5'>valueIsNaN(<font color="#E59866">NaN</font>); <font color="#A4A5A5">// true</font></font>
+    <font color='#A4A5A5'>valueIsNaN(<font color="#E59866">Number.NaN</font>); <font color="#A4A5A5">// true</font></font>
+    </pre></code>
+        </div>
+      </div>
+  </section>
+
+  <section class="btn-next-back">
+    <a href="study5.html" class="btn-next">التعمق في CSS</a>
+    <a href="study11.html" class="btn-next">السابق</a>
+  </section>
+
+
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span class="name">Omar farooq</span></p>
+        </div>
+      </footer>
+      
+
+      <!-- Code JavaScript Menu Sticky-->
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+    </header>
+      <!-- Language -->
+    <section>
+
+        <h2><code class="infin">isNaN()‎</code><br></h2>
+        <p>الدالة isNaN()‎ تُحدِّد فيما إذا كانت القيمة المُمرَّرة إليها هي NaN أم لا. لاحظ أنَّ تحويل القيم داخل الدالة isNaN()‎ له قواعد مثيرة للاهتمام؛ لذا يمكنك استخدام الدالة Number.isNaN()‎ التي عُرِّفَت في ECMAScript 2015 بدلًا من هذه الدالة.</p><br>
+        <p><span class="ober1">الوصف :</span><br>ضرورة وجود الدالة <code>isNaN</code><br>على النقيض من بقية القيم في JavaScript، لا يمكن الاعتماد على معاملات المساواة (== و ===) لتحديد إذا كانت القيمة NaN أم لا، لأنَّ قيمة التعبيرين NaN == NaN و NaN === NaN هي false، وبالتالي هنالك حاجةٌ لهذه الدالة.</p><br>
+        <p><span class="ober1">أصل قيم <code>NaN</code></span><br>تولَّد قيم NaN عندما تُنتِج العمليات الرياضية قيمًا غير معُرَّفة أو غير قابلة للتمثيل، وهذه القيمة تنتج أيضًا من محاولة تحويل القيم غير العددية قسريًا إلى قيم عددية والتي لا يمكن أن يكون لها تمثيلٌ عدديٌ أوليٌ.<br>فمثلًا، قسمة صفر على صفر ستُنتِج NaN، لكن قسمة بقية الأعداد على الصفر لا تُنتِج NaN.</p><br>
+        <p><span class="ober1">السلوك المربك للحالة الخاصة للدالة <code>isNaN</code></span><br>بدءًا من الإصدارات القديمة من مواصفة الدالة isNaN كان سلوكها بالنسبة إلى الوسائط غير العددية مربكًا، فعندما لا يكون الوسيط المُمرَّر إلى الدالة isNaN من النوع Number، فستحوَّل القيمة قسريًا إلى Number، ثم ستُختبَر القيمة الناتجة لمعرفة إن كانت NaN، وبالتالي عند تحويل القيم غير العددية إلى النوع Number قسريًا فسينتج لدينا قيمة non-NaN عددية (ونخص بالذكر السلسلة النصية الفارغة والقيم المنطقية الأولية true و false، التي ستعطي القيم العددية 0 أو 1 عند تحويلها قسريًا إلى عدد) وستُعيد الدالة true على الرغم من أننا نتوقع القيمة false (فمن المؤكد أنَّ السلسلة النصية الفارغة -مثلًا- ليست رقمًا Not-A-Number).<br>ينشأ هذا السلوك المربك بسبب وجود معنى خاص للمصطلح «ليس عددًا» (Not-A-Number) للأرقام التي تُمثَّل كقيم IEEE-754 ذات فاصلة عائمة، ويجب أن تُفسَّر الدالة isNaN على أنها إجابة عن التساؤل: «هل هذه القيمة، عند تحويلها قسريًا إلى قيمة عددية، هي قيمة Not-A-Number كما عرّفتها IEEE-754؟».<br>معيار ECMAScript 2015 أضاف الدالة Number.isNaN()‎، واستخدام الدالة Number.isNaN(x)‎ هي طريقة عملية لمعرفة إن كانت القيمة x هي NaN أم لا، لكن تعريف NaN سيبقى يحمل المعنى الرقمي ولن يعني «ليس رقمًا» (Not-A-Number)؛ ويمكن بشكلٍ بديل استخدام التعبير (‎‎x != x) الذي يُعدّ أكثر طريقة عملية لمعرفة إن كانت القيمة x هي NaN أم لا، وستكون نتيجة التعبير السابقة غير خاضعة للحالات التي تجعل الدالة isNaN غير عملية.<br>يمكن إنشاء حل التفافي للدالة isNaN، عبر الاستفادة من خاصية عدم مساواة قيمة NaN لنفسها:</p><br>
+
+
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>var <font color='#fff'>isNaN = <font color='#FF7F50'>function</font>(value) { </font></font>
+    <font color='#FF7F50'>var <font color='#fff'>n = <font color='#FF7F50'>Number</font>(value);</font></font>
+    <font color='#FF7F50'>return <font color='#fff'>n !== n;</font></font>
+    <font color='#fff'>};</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+    <p>هذه بعض الأمثلة عن القيم التي ستُعدّ Not-A-Number:</p>
+    <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>NaN</font>);</font></font><font color='#A4A5A5'>                  // true</font>
+    <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>undefined</font>);</font></font><font color='#A4A5A5'>       // true</font>
+    <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>{}</font>);</font></font><font color='#A4A5A5'>                      // true</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+
+      <p>أما هذه فهي قيم ليست NaN:</p><br>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>true</font>);</font></font><font color='#A4A5A5'>                 // false</font>
+    <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>null</font>);</font></font><font color='#A4A5A5'>                  // false</font>
+    <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>37</font>);</font></font><font color='#A4A5A5'>                    // false</font>
+    </pre></code>
+        </div>
+      </div>
+
+      <p>أمثلة عن السلاسل النصية، لاحظ أنَّ السلسلة النصية "37" في أوّل مثال قد حُوِّلَت إلى العدد 37 الذي ليس NaN، وكذلك الأمر بالنسبة إلى 37.37 التي ستحوَّل إلى العدد 37.37؛ أما السلسلة النصية "123ABC" فهي NaN وذلك لأنَّ ناتج Number("123ABC")‎ هو NaN (على الرغم من أنَّ ناتج parseInt("123ABC")‎ هو 123). آخر مثالين عن سلاسل نصية فارغة أو فيها فراغ وحيد، والتي ستحوّل إلى العدد 0:</p><br>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>'37'</font>);</font></font><font color='#A4A5A5'>                 // false</font>
+        <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>'37.37'</font>);</font></font><font color='#A4A5A5'>                  // false</font>
+        <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>'123ABC'</font>);</font></font><font color='#A4A5A5'>                    // true</font>
+        <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>''</font>);</font></font><font color='#A4A5A5'>                 // false</font>
+        <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>' '</font>);</font></font><font color='#A4A5A5'>                  // false</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>مثال عن الكائن Date، الذي سيُعيد رقمًا عند استخدامه مع الدالة البانية Number، بينما ستكون السلسلة النصية التابعة له (والتي سنحصل عليها عبر الدالة toString) هي NaN:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>new Date()</font>);</font></font><font color='#A4A5A5'>                 // false</font>
+        <font color='#FF7F50'>isNaN<font color='#fff'>(<font color='#FF7F50'>new Date()<font color='#FFF'>.toString()</font></font>);</font></font><font color='#A4A5A5'>                 // true</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+
+      <p>هذه نتيجة إيجبية كاذبة (false positive)، وهي السبب وراء كون الدالة isNaN غير عملية تمامًا، وذلك لأنَّ السلسلة النصية "blabla" ستحوّل إلى عدد، وتفسير هذا العدد سيفشل وستُعاد القيمة NaN:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#FF7F50'>isNaN<font color='#fff'>('blabla');</font></font><font color='#A4A5A5'>                 // true</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p><span class="ober1">السلوك المفيد للحالة الخاصة للدالة <code>isNaN</code></span><br>هنالك طريقة يمكننا الاستفادة فيها من الدالة isNaN()‎: فلو أعادت الدالة isNaN(x)‎ القيمة false، فيمكننا استخدام x كتعبير رياضي لا يُسبب إعادة القيمة NaN، ولو أعادت true فستؤدي القيمة x إلى جعل جميع التعابير الرياضية التي تدخل فيها تُعيد القيمة NaN؛ وهذا أنَّه في JavaScript إذا أعادت الدالة isNaN(x)‎ القيمة true فهذا يعني أنَّ التعبير x - 0 (مثلًا) سيعيد القيمة NaN (لكن التعبير x - 0 == NaN سيعيد القيمة false دومًا في JavaScript لأن NaN لا تساوي نفسها، لذا لا يمكنك إجراء هذا الاختبار)، وفي الواقع ستُعيد الدوال isNaN(x)‎ و isNaN(x - 0)‎ و isNaN(Number(x))‎ و Number.isNaN(x - 0)‎ و Number.isNaN(Number(x))‎ القيمة نفسها؛ وأقصر طريقة للتعبير عنها هي استخدام الدالة isNaN(x)‎.<br>يمكنك استخدام السلوك السابق لاختبار إذا كان الوسيط المُمرَّر إلى الدالة قابلًا للاستخدام في التعابير الرياضية (أي يمكن معاملته كعدد)، وإذا لم يكن كذلك فيمكنا توفير قيمة افتراضية أو اتباع إجراء آخر؛ وبهذه الطريقة ستستفيد الدالة من مرونة لغة JavaScript التي توفّرها عند تحويل القيم اعتمادًا على سياق استخدامها.<br>سنُعرِّف الدالة increment، التي تُعيد ناتج إضافة القيمة 1 إلى الوسيط المُمرَّر إليها:<br></p><br>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>function <font color='#fff'>increment(x) {</font></font>
+      <font color='#FF7F50'>if <font color='#fff'>(<font color='#FF7F50'>isNaN</font>(x)) x = 0;</font></font>
+      <font color='#FF7F50'>return <font color='#fff'>x + 1;</font></font>
+      <font colot='#fff'>}</font>
+
+
+    <font color='#A4A5A5'>// الدالة الآتية تكافئ الدالة السابقة</font>
+    <font color='#FF7F50'>function <font color='#fff'>increment(x) {</font></font>
+      <font color='#FF7F50'>if <font color='#fff'>(<font color='#FF7F50'>Number.isNaN</font>(<font color='#FF7F50'>Number<font color='#FFF'>(x)</font></font>)) x = 0;</font></font>
+      <font color='#FF7F50'>return <font color='#fff'>x + 1;</font></font>
+      <font colot='#fff'>}</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>في الحالات الآتية ستكون قيمة المعامل x (أي الوسيط المُمرَّر إلى الدالة) ليست NaN، لكن ليس من الضرورة أن تكون قيمة الوسيط عدديةً، وإنما يمكن استعمالها في التعابير الرياضية:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#FFF'>increment(' ');</font><font color='#A4A5A5'>     // 1: "" => 0</font>
+        <font color='#FFF'>increment(<font color='#FF7F50'>new String</font>());</font><font color='#A4A5A5'>    // 1: String object => 0</font>
+        <font color='#FFF'>increment([]);</font><font color='#A4A5A5'>    // 1: [] => 0</font>
+        <font color='#FFF'>increment(<font color='#FF7F50'>new Array</font>());</font><font color='#A4A5A5'>    // 1: Array object => 0</font>
+        <font color='#FFF'>increment('0');</font><font color='#A4A5A5'>    // 1: "0" => 0</font>
+        <font color='#FFF'>increment('1');</font><font color='#A4A5A5'>    // 2: "1" => 1</font>
+        <font color='#FFF'>increment('0.1');</font><font color='#A4A5A5'>    // 1.1: "0.1" => 0.1</font>
+        <font color='#FFF'>increment('Infinity');</font><font color='#A4A5A5'>    // Infinity: "Infinity" => Infinity</font>
+        <font color='#FFF'>increment('null');</font><font color='#A4A5A5'>    // 1: null => 0</font>
+        <font color='#FFF'>increment('false');</font><font color='#A4A5A5'>    // 2: true => 1</font>
+        <font color='#FFF'>increment('true');</font><font color='#A4A5A5'>    // 1: null => 0</font>
+        <font color='#FFF'>increment(<font color='#FF7F50'>newData</font>());</font><font color='#A4A5A5'>    // تعيد الوقت والتاريخ الحاليين بالملي ثانية + 1</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>أما الحالات الآتية فتكون قيمة المعامل x (أي الوسيط الممرر إلى الدالة) ليست NaN، لكن الوسيط هو قيمةٌ عدديةٌ:<br></p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#FFF'>increment(-1);</font><font color='#A4A5A5'>     // 0</font>
+        <font color='#FFF'>increment(-0.1);</font><font color='#A4A5A5'>    // 0.9</font>
+        <font color='#FFF'>increment(0);</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment(1);</font><font color='#A4A5A5'>    // 2</font>
+        <font color='#FFF'>increment(2);</font><font color='#A4A5A5'>    // 3</font>
+
+
+        <font color='#A4A5A5'>// مهم</font>
+        <font color='#FFF'>increment('<font color='#FF7F50'>Infinity</font>');</font><font color='#A4A5A5'>    // Infinity</font>
+    </pre></code>
+        </div>
+      </div>
+      <p>أما في الحالات الآتيةـ فتكون نتيجة الدالة isNaN(x)‎ هي true دومًا وقيمة الوسيط المُمرَّر إلى الدالة ليست عدديةً (Not-A-Number)، لذا ستضع الدالة القيمة 0 بدلًا منه (كما عرّفنا ذلك داخلها) والقيمة النهائية المعادة هي 1:<br></p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#FFF'>increment(<font color='#FF7F50'>String</font>);</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment(<font color='#FF7F50'>Array</font>);</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment('blabla');</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment('-blabla');</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment(0 / 0);</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment('0 / 0');</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment(<font color='#FF7F50'>Infinity / Infinity</font>);</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment(<font color='#FF7F50'>NaN</font>);</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment(<font color='#FF7F50'>undefined</font>);</font><font color='#A4A5A5'>    // 1</font>
+        <font color='#FFF'>increment('');</font><font color='#A4A5A5'>    // 1</font>
+    </pre></code>
+        </div>
+      </div>
+  </section>
+
+  <section class="btn-next-back">
+    <a href="../study2.html" class="btn-next">السابق</a>
+  </section>
+
+
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span class="name">Omar farooq</span></p>
+        </div>
+      </footer>
+      
+
+      <!-- Code JavaScript Menu Sticky-->
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+    </header>
+      <!-- Language -->
+    <section>
+
+        <h2><code class="infin">الدالة eval()‎</code><br></h2>
+        <p>الدالة eval()‎ تُقدِّر قيمة شيفرة JavaScript المُمثَّلة في سلسلة نصية.</p><br>
+        <p><span class="ober1">الوصف :</span><br>الدالة eval()‎ هي خاصيةٌ للكائن العام (global object)، وتقبل وسيطًا هو سلسلة نصية، وإذا كانت هذه السلسلة النصية تُمثِّل تعبيرًا (expression أو statement) أو أكثر، فستُقدِّر الدالةُ eval()‎ قيمته؛ لا تستدعِ الدالة eval()‎ لتقدير قيمة التعابير الرياضية، إذ تقدِّر لغة JavaScript قيمة التعابير الرياضية تلقائيًا.<br>إذا ركّبتَ تعبيرًا رياضيًا كسلسلة نصية، فيمكنك استخدام الدالة eval()‎ لتقدير قيمته في وقتٍ لاحق، فلنفترض مثلًا أنَّ لديك المتغير x، فيمكنك تأجيل تقدير تعبير يتضمن المتغير x بإسناد ذلك التعبير الرياضي إلى متغير (ولتكن قيمة تلك السلسلة النصية هي "‎3 * x + 2") ومن ثم استدعاء الدالة eval()‎ في مرحلة لاحقة في البرنامج.<br>إذا لم يكن نوع الوسيط المُمرَّر إلى الدالة eval()‎ سلسلةً نصيةً فستعيد الدالة eval()‎ الوسيط كما هو، ففي المثال الآتي استخدمنا الدالة البانية String، وأعادت الدالة eval()‎ الكائن String بدلًا من تقدير قيمة السلسلة النصية:</p><br>
+
+      <p><span class="ober1">أمثلة :</span><br>الأمثلة الآتية تُظهِر ناتج العمليات الرياضية على القيمة Infinity:</p><br>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>eval (<font color='#fff'> new String ( '2 + 2 </font>);</font><font color="#A4A5A5">        // String object containing "2 + 2"</font>
+    <font color='#FF7F50'>eval (<font color='#fff'> '2 + 2 </font>);</font><font color="#A4A5A5">        // 4</font>
+    
+    </pre></code>
+        </div>
+      </div>
+
+
+    <p>يمكنك الالتفاف حول هذه المحدودية عبر استخدام الدالة toString()‎:</p>
+    <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>var <font color='#fff'> expression </font> = </font><font color='#fff'> new String ( '2 + 2 );</font>
+    <font color='#FF7F50'>eval (<font color='#fff'> expression.toString()</font>);</font>
+    
+    </pre></code>
+        </div>
+      </div>
+
+      <p>إذا استخدمتَ الدالة eval بشكلٍ غير مباشر، أي باستدعائها عبر مرجعية إليها بدلًا من استخدام eval مباشرة، فستُقدِّر الدالة eval قيمتها في المجال العام بدلًا من المجال المحلي وذلك<br>ما سبق يعني أنَّ تعابير التصريح عن الدوال ستؤدي إلى إنشاء دوال عامة والشيفرة التي ستُقدَّر قيمتها لن تملك وصولًا إلى المتغيرات المحلية في المجال المحلي الذي استدعاها. انظر مليًا إلى المثال الآتي لإزالة الغموض عن المثال السابق:</p><br>
+
+
+
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>function <font color='#fff'> test(){</font></font>
+    <font color='#FF7F50'>var <font color='#fff'>x = 2, y = 4;</font></font>
+    <font color='#FF7F50'>console.log <font color='#fff'>(eval('x=y'));</font></font>
+    <font color='#FF7F50'>var <font color='#fff'>geval = eval;</font></font>
+    <font color='#FF7F50'>console.log <font color='#fff'>(geval('x=y'));</font></font>
+    <font color='#FF7F50'>(<font color='#fff'>0, eval</font>)</font><font color='#FF7F50'>(<font color='#fff'>'x + y'</font>);</font>
+    <font color="#fff">}</font>
+    </pre></code>
+        </div>
+      </div>
+
+      <p><span class="ober1">لا تستخدم eval دون حاجة</span><br>الدالة eval()‎ دالةٌ خطيرةٌ، التي ستُفِّذ الشيفرة التي ستُمرَّر إليها بنفس امتيازات البرنامج الذي استدعاها، فلو استدعيت الدالة eval()‎ مع سلسلة نصية التي يمكن تعديل قيمتها من طرفٍ له نوايا خبيثة، فسينتهي بك المطاف بتشغيل شيفرات مضرة على جهاز المستخدم بنفس امتيازات موقعك أو إضافتك؛ أضف إلى ذلك أنَّ الشيفرة الخبيثة يمكنها أن ترى ما في مجال استدعاء الدالة eval()‎، مما يؤدي إلى زيادة نطاق الهجوم...<br>لاحظ أنَّ استخدام الدالة eval()‎ يكون أبطأ من غيرها من البدائل، وذلك لأنها تؤدي إلى تشغيل مُفسِّر JavaScript، بينما البنى البرمجية الأخرى يمكن تحسين أداؤها من قِبل أغلبية محركات JavaScript الحديثة.<br>سنذكر فيما يلي من الأقسام البدائل الشائعة للدالة eval()‎ لمختلف الاستخدامات الشائعة.<br></p><br>
+      <p><span class="ober1">الوصول إلى خاصيات الكائنات</span><br>لا تستخدم الدالة eval()‎ لمحاولة الوصول إلى خاصيات الكائنات، فخذ مثلًا المثال الآتي الذي لن نعرف فيه اسم الخاصية التي نريد الوصول إليها إلى أن تُنفَّذ الشيفرة. انظر إلى طريقة استخدام الدالة eval()‎:<br></p><br>
+
+
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>var <font color='#fff'>obj = { a: 20, b: 30 };</font></font>
+    <font color='#FF7F50'>var <font color='#fff'>propName = getPropName();</font></font><font color="#A4A5A5">       // تُعيد "a" أو "b"</font>
+    <font color='#FF7F50'>eval <font color='#fff'>('var result = obj.' + propName);</font></font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>لكن لاحظ أنَّ الدالة eval()‎ غير ضرورية هنا، ولا ينصح باستخدامها هنا، وإنما علينا استخدام طرائق الوصول إلى الخاصيات، التي تكون أكثر أمانًا وسرعةً:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>var <font color='#fff'>obj = { a: 20, b: 30 };</font></font>
+    <font color='#FF7F50'>var <font color='#fff'>propName = getPropName();</font></font><font color="#A4A5A5">       // تُعيد "a" أو "b"</font>
+    <font color='#FF7F50'>var <font color='#fff'>result = obj[ propName ];</font></font><font color="#A4A5A5">       //  obj[ "a" ] = obj.a</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+
+      <p>يمكنك استخدام هذه الطريقة للوصول إلى الخاصيات الفرعية (التي تتبع لكائنٍ يتبع لكائنٍ آخر). انظر كيف سنستخدم الدالة eval()‎ هنا:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>var <font color='#fff'>obj = {a: {b: {c: 0}}};</font></font>
+    <font color='#FF7F50'>var <font color='#fff'>propPath = getPropPath();</font></font><font color="#A4A5A5">        // ستُعيد مثلًا "a.b.c"</font>
+    <font color='#FF7F50'>var <font color='#fff'>( 'var result = obj.' + propPath );</font></font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>يمكن تفادي استخدام الدالة eval()‎ بتقسيم «مسار» الخاصية والمرور على مختلف الخاصيات:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>function <font color='#fff'>getDescendantProp(obj, desc) {</font></font>
+      <font color='#FF7F50'>var <font color='#fff'>arr = desc.split('.');</font></font>
+      <font color='#FF7F50'>while <font color='#fff'>(arr.length) {</font></font>
+      <font color='#fff'>obj = obj[arr.shift()];</font>
+      <font colot='#fff'>}</font>
+      <font color='#FF7F50'>return <font color='#fff'>obj;</font></font>
+    <font color="#fff">}</font>    
+    <font color='#FF7F50'>var <font color='#fff'>obj = {a: {b: {c: 0}}};</font></font>
+    <font color='#FF7F50'>var <font color='#fff'>propPath = getPropPath();</font></font><font color="#A4A5A5">        // ستُعيد مثلًا "a.b.c"</font>
+    <font color='#FF7F50'>var <font color='#fff'>result = getDescendantProp(obj, propPath);</font></font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>يمكن استخدام الطريقة السابقة نفسها لضبط قيم الخاصيات:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>function <font color='#fff'>setDescendantProp(obj, desc, value) {</font></font>
+      <font color='#FF7F50'>var <font color='#fff'>arr = desc.split('.');</font></font>
+      <font color='#FF7F50'>while <font color='#fff'>(arr.length > 1) {</font></font>
+      <font color='#fff'>obj = obj[arr.shift()];</font>
+      <font colot='#fff'>}</font>
+      <font color='#fff'>obj[arr[0]] = value;</font>
+    <font color="#fff">}</font>    
+    <font color='#FF7F50'>var <font color='#fff'>obj = {a: {b: {c: 0}}};</font></font>
+    <font color='#FF7F50'>var <font color='#fff'>propPath = getPropPath();</font></font><font color="#A4A5A5">        // ستُعيد مثلًا "a.b.c"</font>
+    <font color='#FF7F50'>var <font color='#fff'>result = setDescendantProp(obj, propPath, 1);</font></font><font color='#A4A5A5'>    // test.a.b.c = 1</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p><span class="ober1">استخدام الدوال بدلًا من تقدير قيمة مقتطفات من الشيفرة<br></span>تملك JavaScript دوالًا من الصنف الأول (first-class functions)، وهذا يعني أنَّ بالإمكان تمرير الدوال كوسائط إلى دوال أخرى، أو تخزينها في متغيرات أو خاصيات الكائنات، وهلمَّ جرًا. وقد صُمِّمَت الواجهات البرمجية لشجرة DOM بأخذ ذلك بالحسبان، فيمكنك أن تضع:<br></p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color='#fff'>setTimeout(</font><font color='#FF7F50'>function <font color='#fff'>() { ... }, 1000);</font></font>
+    </pre></code>
+        </div>
+      </div>
+      <p>بدلًا من:<br></p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color='#fff'>setTimeout(" ... ", 1000)</font>
+    </pre></code>
+        </div>
+      </div>
+
+      <p>أو أن تضع:<br></p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color="#fff">elt.addEventListener('click',</font><font color='#FF7F50'>function <font color='#fff'>() { ... } ,<font color='#FF7F50'>false</font>);</font></font>
+    </pre></code>
+        </div>
+      </div>
+      <p>بدلًا من:<br></p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color='#fff'>elt.setAttribute(<font color='#FF7F50'>"onclick", "..."</font>);</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p><span class='ober1'>تحويل سلاسل JSON إلى كائنات JavaScript</span><br>إذا كانت السلسلة النصية التي مررتها إلى الدالة eval()‎ تحتوي على بيانات (مثلًا، المصفوفة ‎"‎‎[1, 2, 3]"‎) وليس شيفرات وتعابير برمجية، فمكن المستحسن التحويل إلى صيغة JSON، مما يسمح للسلسلة النصية استخدام قسم من بنية JavaScript لتمثيل البيانات.<br>أبقِ في ذهنك أنَّ صيغة JSON محدودة بالنسبة إلى صيغة JavaScript، فالكثير من الأشياء المسموحة في JavaScript لا يمكن استخدمها في JSON، فلا يمكن -على سبيل المثال- استخدام فاصلة زائدة في نهاية الكائن (trailing comma)، ويجب أن تكون أسماء الخاصيات (أي المفاتيح) موضوعةً بين علامتَي اقتباس.</p>
+
+      <p><span class='ober1'>استخدام eval</span><br>هنالك تعبيران برمجيان في المثال الآتي يستخدمان الدالة eval()‎ التي ستُعيد القيمة 42، وأوّل تعبير برمجي سيُقدِّر قيمة السلسلة النصية ‎"x + y + 1"‎ أما التعبير البرمجي الثاني فسيُقدِّر قيمة السلسلة النصية "42":</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color="#FF7F50">var </font><font color='#fff'>x = 2</font>
+      <font color="#FF7F50">var </font><font color='#fff'>y = 39;</font>
+      <font color="#FF7F50">var </font><font color='#fff'>z = '42';</font>
+      <font color="#FF7F50">eval </font><font color='#fff'>('x + y + 1');</font><font color='#A4A5A5'>    //42</font>
+      <font color="#FF7F50">eval </font><font color='#fff'>(z);</font><font color='#A4A5A5'>    //42</font>
+    </pre></code>
+        </div>
+      </div>
+      <p><span class="ober1">استخدام eval لتقدير قيمة التعابير البرمجية</span><br>سنستخدم الدالة eval()‎ في المثال الآتي لتقدير قيمة السلسلة النصية str، وهذه السلسلة النصية تحتوي على تعابير JavaScript التي تطبع قيمة المتغير z وتُسنِد القيمة 42 إليه إذا كانت قيمة المتغير x تساوي 5، وإلا فستُسنِد القيمة 0 إلى المتغير z:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color="#FF7F50">var </font><font color='#fff'>x = 5</font>
+      <font color="#FF7F50">var </font><font color='#fff'>str = "if (x == 5) {console.log('z is 42'); z = 42;} else z = 0;";</font>
+      <font color="#FF7F50">console.log</font><font color='#fff'>('z is', eval(str));</font><font color='#A4A5A5'>    // z is 42  z is 42</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>لاحظ أنَّ آخر قيمة من السلسلة النصية التي ستُمرَّر إلى الدالة eval()‎ هي القيمة التي ستُعاد:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color="#FF7F50">var </font><font color='#fff'>x = 5</font>
+      <font color="#FF7F50">var </font><font color='#fff'>str = "if (x == 5) {console.log('z is 42'); z = 42; x = 420; } else z = 0;"; </font>
+      <font color="#FF7F50">console.log</font><font color='#fff'>('x is', eval(str));</font><font color='#A4A5A5'>    // z is 42  x is 420</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p><span class="ober1">ستُعاد قيمة آخر تعبير</span><br>الدالة eval()‎ ستُعيد قيمة آخر تعبير قُدِّرَت قيمته:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color="#FF7F50">var </font><font color='#fff'>str = 'if ( a ) { 1 + 1; } else { 1 + 2; }';</font>
+      <font color="#FF7F50">var </font><font color='#fff'>a = <font color='#FF7F50'>true;</font></font>
+      <font color="#FF7F50">var</font><font color='#fff'>b = <font color='#FF7F50'>eval</font>(str);</font><font color='#A4A5A5'>    // 2</font>
+      <font color="#FF7F50">console.log</font><font color='#fff'>('b is', b);</font>
+      <font color="#fff">a = </font><font color='#FF7F50'>false;</font>
+      <font color='#fff'>b = <font color='#FF7F50'>eval</font>(str);</font><font color='#A4A5A5'>    // 3</font>
+      <font color="#FF7F50">console.log</font><font color='#fff'>('b is', b);</font>
+    </pre></code>
+        </div>
+      </div>
+
+      <p><span class="ober1">يجب إحاطة تعابير التصريح عن الدوال بقوسين</span><br>عند التصريح عن الدوال ضمن سلسلة نصية تُمرَّر إلى الدالة eval()‎ فيجب إحاطتها بقوسين هلاليين، كما في المثال الآتي، الذي ستُعاد فيه القيمة undefined عند عدم استخدام قوسين:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color="#FF7F50">var </font><font color='#fff'>fctStr1 = 'function a() {}'</font>
+      <font color="#FF7F50">var </font><font color='#fff'>fctStr2 = '(function a() {})'</font>
+      <font color="#FF7F50">var</font><font color='#fff'>fct1 = eval(fctStr1)</font><font color='#A4A5A5'>    // undefined</font>
+      <font color="#FF7F50">var</font><font color='#fff'>fct2 = eval(fctStr2</font><font color='#A4A5A5'>    // function</font>
+    </pre></code>
+        </div>
+      </div>
+  </section>
+
+  <section class="btn-next-back">
+    <a href="../study2.html" class="btn-next">السابق</a>
+  </section>
+
+
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span class="name">Omar farooq</span></p>
+        </div>
+      </footer>
+      
+
+      <!-- Code JavaScript Menu Sticky-->
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>

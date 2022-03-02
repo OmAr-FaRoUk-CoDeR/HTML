@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+    </header>
+      <!-- Language -->
+    <section>
+    <div class="html">
+        <h2>بنية اللغة</h2><br>
+        <p>كانت لغة JavaScript محدودةً إلى متصفحات الويب فيما قد سلف، لكن توسّع مجال JavaScript في الفترة الأخيرة لتضم إنشاء تطبيقات ويب من جهة الخادم (server-side) مع التعامل مع قواعد البيانات، إضافةً إلى إمكانية استخدامها في بيئات ليست متعلقة بالويب مثل معالجات النصوص وبرمجيات PDF، ومن الممكن استعمالها أيضًا لكتابة تطبيقات سطح المكتب أو تطبيقات الهواتف، وحتى تطوير الألعاب!<br>هنالك الكثير من محركات JavaScript، وكل واحدٍ منها يخضع لمواصفة ECMAScript (مع أنَّها تختلف فيما بينها بالإصدارات التي تدعمها). يوجد في نهاية كل صفحة من صفحات هذا التوثيق قسمٌ بعنوان «دعم المتصفحات» الذي نذكر فيه ما هي المتصفحات التي تدعم الميزة المذكورة.<br><br>يتألف أساس لغة JavaScript من الميزات الشائعة للغات البرمجة، التي تسمح لنا :<br><br>1-بتخزين القيم داخل متغيرات،<br>2-إجراء عمليات معالجة على السلاسل النصية،<br>3-تنفيذ إجراءات معيّنة اعتمادًا على وقوع الأحداث.</p><br>
+        <p>خصائص أشرطة التمرير تسمح لك بالتحكم في شريط التمرير بالصفحة ، كإعداد لون القاعدة و لون الخلفية و لون السهم و لون الواجهة أو لون الظل كما بمكنك إضافة تأثير ثلاثي للشريط.<br>والتي تسمح للمطورين باستخدام لغة JavaScript للتعامل مع كثيرٍ من الأشياء، في مجال متصفحات الويب يمكننا استخدام JavaScript للتعامل مع شجرة DOM، ولاستخدام الواجهة البرمجية للمواقع الجغرافية (Geolocation API)، ولإنشاء رسوميات ثنائية وثلاثية الأبعاد عبر Canvas و WebGL، وللتحكم بالوسائط مثل الفيديو والصوت، وغير ذلك.<br><br>ويمكن استخدام JavaScript أيضًا من طرف الخادم، ولمزيدٍ من المعلومات انظر إلى صفحة Node.js.<br><br>يمكن تضمين شيفرات JavaScript في الصفحات بطريقتين :<br>1-تضمين الشيفرات داخل مستند HTML<br>2-استخدام ملف خارجي</p><br>
+    </div>    
+    <p>يمكن تضمين شيفرة JavaScript في أي مكان داخل المستند، لكن يُنصَح بوضعها قبل وسم الإغلاق للعنصر &lt;body&gl;. تُضاف الشيفرة داخل العنصر &lt;script&gt; كما يلي:</p>
+    <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+        <pre class="has"><code class="hljs language-html"><font color='#CD5C5C'>&lt;script&gt;</font>
+  </font>// شيفرات javascript<font color='#CD5C5C'></font>
+<font color='#CD5C5C'>&lt;/script&gt;</font></code></pre>
+    </div></div><br>
+
+    <p>أما إذا كانت شيفرة JavaScript في ملفٍ خارجي (وليكن اسمه script.js) فيمكن تضمينه باستخدام العنصر &lt;script&gt; أيضًا، لكن مع استخدام الخاصية src كما يلي:</p>
+    <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+       <font color='#CD5C5C'>&lt;script <font color='#FF7F50'>src</font>=<font color='#449B45'>&quot;script.js&quot; <font color='#CD5C5C'>&gt;</font></font>&lt;script&gt;</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p><span class="ober1">الكائنات العامة :</span><br>في هذا القسم جميع الكائنات العامة المُضمَّنة في لغة JavaScript، إضافةً إلى جميع الخاصيات والدوال التابعة لها.</p><br>
+      <p><span class="ober1">الخاصيات العامة :</span><br><font>هذه الخاصيات العامة تُعيد قيمةً بسيطةً، فهي لا تُمثِّل دوالًا أو خاصياتٍ تابعة لأحد الكائنات.<br></p>
+        <br>
+        <div class="li-d">
+          <li>
+            <a href="value-study1/infin.html"><code class="a">infinity</code></a><br><br>
+          </li>
+          <li>
+            <a href="value-study1/nan.html"><code class="a">NaN</code></a><br><br>
+          </li>
+          <li>
+            <a href="value-study1/undefined.html"><code class="a">Undefined</code></a><br><br>
+          </li>
+          <li>
+            <a href="value-study1/null.html"><code class="a">null</code></a><br>
+          </li>
+        </div>
+  </section>
+
+  <section class="btn-next-back">
+    <a href="study2.html" class="btn-next">التالي</a>
+  </section>
+
+
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span class="name">Omar farooq</span></p>
+        </div>
+      </footer>
+      
+
+      <!-- Code JavaScript Menu Sticky-->
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>

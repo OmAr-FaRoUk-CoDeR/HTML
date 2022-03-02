@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+    </header>
+      <!-- Language -->
+    <section>
+
+        <h2><code class="infin">encodeURI()‎</code><br></h2>
+        <p>الدالة encodeURI()‎ تُرمِّز روابط URI (اختصار للعبارة Uniform Resource Identifier) بتبديل كل نسخة من محارف معيّنة إلى عبارة مُهرَّبة (escape sequences) أو أكثر والتي تُمثِّل ترميز UTF-8 للمحرف المعني.<br></p><br>
+        <p><span class="ober1">الوصف<br></span>الدالة encodeURI لا تُرمِّز المحارف التي لها معنى خاص (المحارف المحجوزة [reserved charachters]) في روابط URI، فالمثال الآتي يُظهِر ما الذي يمكن أن يحتويه رابط URI، لاحظ أنَّ بعض المحارف فيه تُستخدَم لإعطاء معنى خاص.<br><br>
+
+            <code style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;">
+                http://username:password@www.example.com:80/path/to/file.php?foo=316&bar=this+has+spaces#anchor
+            </code>
+            <br><br>وبالتالي لن تُرمِّز الدالة encodeURI المحارف اللازمة لإنشاء رابط URI كامل، لاحظ أنَّ الدالة encodeURI لن تُرمِّز بعض المحارف المعروفة باسم «العلامات غير المحجوزة» (unreserved marks)، والتي ليس لها غرضٌ محجوزٌ لكن يُسمَح بوجودها في روابط URI «كما هي» (راجع RFC2496). الدالة encodeURI تُهرِّب (escape) جميع المحارف ما عدا:<br><br>
+            <code style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;">
+                A-Z a-z 0-9 ; , / ? : @ & = + $ - _ . ! ~ * ' ( ) #
+            </code><br><br>
+            تختلف الدالة encodeURI عن الدالة encodeURIComponent كما هو موضَّح في المثال الآتي، لاحظ أنَّ الاختلاف الرئيسي بينهما هو في ترميز المحارف المحجوزة (reserved characters):
+        </p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>var<font color='#fff'> set1 = ";,/?:@&=+$#";</font></font><font color='#A4A5A5'>   // محارف محجوزة</font>
+    <font color='#FF7F50'>var<font color='#fff'> set2 = "-_.!~*'()";</font></font><font color='#A4A5A5'>     // علامات غير محجوزة</font>
+    <font color='#FF7F50'>var<font color='#fff'> set3 = "ABC abc 123";</font></font><font color='#A4A5A5'>   // أحرف وأرقام وفراغات</font>
+
+    <font color='#FF7F50'>console.log<font color="#fff">(</font>encodeURI</font><font color="#fff">(set1));</font><font color='#A4A5A5'>   // ;,/?:@&=+$#</font>
+    <font color='#FF7F50'>console.log<font color="#fff">(</font>encodeURI</font><font color="#fff">(set2));</font><font color='#A4A5A5'>   // -_.!~*'()</font>
+    <font color='#FF7F50'>console.log<font color="#fff">(</font>encodeURI</font><font color="#fff">(set3));</font><font color='#A4A5A5'>   // ABC%20abc%20123 (لاحظ كيف رُمِّزَ الفراغ)</font>
+
+    <font color='#FF7F50'>console.log<font color="#fff">(</font>encodeURIComponent</font><font color="#fff">(set1));</font><font color='#A4A5A5'>   // %3B%2C%2F%3F%3A%40%26%3D%2B%24%23</font>
+    <font color='#FF7F50'>console.log<font color="#fff">(</font>encodeURIComponent</font><font color="#fff">(set2));</font><font color='#A4A5A5'>   // -_.!~*'()</font>
+    <font color='#FF7F50'>console.log<font color="#fff">(</font>encodeURIComponent</font><font color="#fff">(set3));</font><font color='#A4A5A5'>   // ABC%20abc%20123 (لاحظ كيف رُمِّزَ الفراغ)</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+    <p>معالجة الاستثناءات</p>
+    <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#FF7F50'>function<font color='#fff'> fixedEncodeURI(str) {</font></font>
+        <font color='#FF7F50'>return encodeURI<font color='#fff'>(str).replace(/%5B/g, '[').replace(/%5D/g, ']');</font>
+    <font color='#FFF'>}</font>
+    </pre></code>
+        </div>
+      </div>
+  </section>
+
+  <section class="btn-next-back">
+    <a href="../study2.html" class="btn-next">السابق</a>
+  </section>
+
+
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span class="name">Omar farooq</span></p>
+        </div>
+      </footer>
+      
+
+      <!-- Code JavaScript Menu Sticky-->
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>
