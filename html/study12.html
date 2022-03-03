@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="html1.css">
+  <meta name="viewport" content="width=device-width, intial-scale-1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+      </header>
+
+
+      <!-- Language -->
+      <section>
+      <div class="html">
+        <h2>الخلفيات في HTML</h2>
+        <p>الخلفيات الجذابة يمكنها أن تصنع مواقع ويب رائعة الشكل.</p><br>
+        <p><span class="ober1">الخلفيات :</span><br>الوسم &lt;body&gt; يمتلك خاصيتين لتعيين الخلفيات ، حيث يمكن تحديد الخلفية سواء على هيئة لون أو على هيئة صورة.</p><br><br>
+
+        <p><span class="ober1">السمة Bgcolor :</span><br>تستخدم السمة bgcolor لإعداد لون الخلفية ، حيث يمكنك استخدام أحد القيم المتعارف عليها للألوان ، سواء كانت أرقام hex ، أو قيم RGB ، أو أسماء الألوان ، كما يتضح من خلال الكود التالي:</p>
+
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+       <font color='#CD5C5C'>&lt;body <font color='#FF7F50'>bgcolor</font>=<font color='#449B45'>&quot;#000000&quot;</font>&gt;</font>
+       <font color='#CD5C5C'>&lt;body <font color='#FF7F50'>bgcolor</font>=<font color='#449B45'>&quot;rgb(0,0,0)&quot;</font>&gt;</font>
+       <font color='#CD5C5C'>&lt;body <font color='#FF7F50'>bgcolor</font>=<font color='#449B45'>&quot;black&quot;</font>&gt;</font>
+    </pre></code>
+        </div>
+      </div>
+      <p>حيث تشير الأكواد الثلاثة السابقة إلى تعيين اللون الأسود كخلفية بالصيغ الثلاث المتعارف عليها.</p><br>
+      <p><span class="ober1">السمة Background :</span><br>تستخدم السمة background لإعداد صورة للخلفية ، حيث يتم تعيين الصورة المستخدمة كخلفية من خلال URL ، و في حال كون الصورة أصغر من نافذة المتصفح سوف يتم تكرارها ذاتياً رأسياً و أفقياً حتى يتم ملء نافذة المتصفح. و يتم ذلك من خلال الكود التالي :</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color='#CD5C5C'>&lt;body <font color='#FF7F50'>bgcolor</font>=<font color='#449B45'>&quot;banner.jpg&quot;</font>&gt;</font>
+      <font color='#CD5C5C'>&lt;body <font color='#FF7F50'>bgcolor</font>=<font color='#449B45'>&quot;pro-school/banner.jpg&quot;</font>&gt;</font>
+    </pre></code>
+        </div>
+      </div>
+      <p>حيث يمكنك استخدام URL نسبي كما هو موضح بالسطر الأول أو يمكنك استخدام URL مطلق كما هو موضح بالسطر الثاني.</p><br>
+      
+
+      <p><span class="ober1">لاحظ أن :<br></span>إذا أردت أن تستخدم صورة كخلفية يجب أن تضع في اعتبارك النقاط التالية:<br>* أن الصور تأخذ وقت أطول في التحميل لذا يجب أن لا يزيد حجم الصورة عن 5 كيلو بايت.<br>* أن صورة الخليفة يجب أن تكون متوافقة مع باقي الصور في الصفحة.<br>* أن صورة الخلفية يجب أن تكون متوافقة مع ألوان الكتابة في الصفحة.<br>* أن صورة الخلفية سوف يتم عرضها بطريقة جيدة عند تكراراها.<br>* أن التركيز سيكون على الخلفية أكثر من النص نفسه.</p><br>
+
+
+      <p><span class="ober1">لاحظ أن " معلومات مفيدة " :<br></span>تم استبعاد سمات " bgcolor " و " background " و " text " من الوسم < body> في الإصدارات الأحدث من HTML مثل ( HTML 4 و XHTML ) ... و جمعية (W3C) أو " World Wide Web Consortium " استبعدت هذه السمات من توصياتها.<br>في الإصدارات المستقبلية من إصدارات الـ HTML ، سيتم استخدام الأنماط الانسيابية (CSS) لتحديد التخطيط العام و عرض خصائص عناصر الـ HTML. المواقع الأكثر زيارة و الأكثر شهرة قليل منها يستخدم الصور كخلفيات ... أما أغلبها يستخدم الألوان كخلفيات و هي ألوان الأبيض و الأسود و الرمادي.</p>
+      
+      </section>
+      <section class="btn-next-back">
+        <a href="study10.html" class="btn-next">التعمق في HTML</a>
+        <a href="study11.html" class="btn-next">السابق</a>
+      </section><br>
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span>Omar farooq</span></p>
+        </div>
+      </footer>
+
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>

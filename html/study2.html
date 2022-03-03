@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="html1.css">
+  <meta name="viewport" content="width=device-width, intial-scale-1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+      </header>
+      <!-- Language -->
+      <section>
+      <div class="html">
+          <h2>عناصر الـ HTML</h2>
+          <p>ملفات HTML هي ملفات نصية مكونة من عناصر HTML. عناصر الـ HTML تحدد وسوم HTML المستخدمة.<b><br><br>
+          </p>
+          <p><span class="ober1">وسوم HTML :-</span><br>* وسوم HTML تستخدم لتعليم عناصر الـ HTML.<br>* وسوم الـ HTML يتم أحاطتها برمزين هما < و > .<br>* رموز المحيطة بكود الـ HTML، تدعى أقواس الفئة.<br>* وسوم الـ HTML العادية تكتب بشكل مزدوج كما بالشكل التالي:<br><font color="#4a90e2">&lt;b&gt;هذا هو شكل الوسم&lt;/b&gt;</font><br>* الوسم الأول هو وسم بداية الكود، و الوسم الثاني هو وسم إغلاق الكود.<br>* النص الموجود بين وسم البداية و وسم الإغلاق هو محتويات العنصر.<br>* وسوم الـ HTML غير حساسة لحالة الأحرف، بمعنى أن الوسم &lt;b&gt; هو ذاته الوسم &lt;B&gt; .<br><br>بالرجوع للمثال الذي درسناه في الفصل السابق:</p>
+    </div>
+    <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+      <div class="htmledit_views">
+
+      <pre class="has"><code class="hljs language-html"> <font color='#749BFA'>&lt;!DOCTYPE html&gt;</font>
+      <font color='#CD5C5C'>&lt;html</font> <font color='#FF7F50'>lang</font>=<font color='#449B45'>&quot;en&quot;</font><font color='#CD5C5C'>&gt;</font>
+      <font color='#CD5C5C'>&lt;head&gt;</font>
+      &nbsp;&nbsp;&nbsp;&nbsp; <font color='#CD5C5C'>&lt;meta</font> <font color='#FF7F50'>charset</font>=<font color='#449B45'>&quot;UTF-8&quot;</font><font color='#CD5C5C'>&gt;</font>
+      
+      &nbsp;&nbsp;&nbsp;&nbsp; <font color='#CD5C5C'>&lt;title&gt;</font>Page Title<font color='#CD5C5C'>&lt;/title&gt;</font>
+      <font color='#CD5C5C'>&lt;/head&gt;</font>
+      <font color='#CD5C5C'>&lt;body&gt;</font>
+      
+          <font color='#CD5C5C'>&lt;b&gt;</font>Hello World<font color='#CD5C5C'>&lt;/b&gt;</font>
+      
+      <font color='#CD5C5C'>&lt;/body&gt;</font>
+      <font color='#CD5C5C'>&lt;/html&gt;</font></code></pre>
+
+      <p class="code1">هذا هو عنصر الـ HTML:</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+  
+        <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>&lt;b&gt;</font>Hello World<font color='#CD5C5C'>&lt;/b&gt;</font>
+        </code></pre>
+      </div></div>
+      
+      <p>عنصر الـ HTML يبدأ مع وسم البداية &lt;b&gt; ثم محتويات عنصر الـ HTML و هي في ذلك المثال " ما رأيكم في هذا النص العريض ؟ " ثم إغلاق الوسم بوسم الإغلاق &lt;/b&gt; .الغرض من الوسم &lt;b&gt; هو تحديد عنصر الـ HTML الواجب عرضه كنص عريض. و هذا أيضاً يعد عنصر HTML:</p><br>
+      <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>&lt;body&gt;</font>
+        
+            <font color='#CD5C5C'>&lt;b&gt;</font>Hello World<font color='#CD5C5C'>&lt;/b&gt;</font>
+        
+        <font color='#CD5C5C'>&lt;/body&gt;</font>
+    </code></pre>
+      <p> هذا العنصر يبدأ مع وسم البداية &lt;body&gt; و ينتهي مع وسم النهاية &lt;/body&gt;</p><br>
+      <p>الغرض من هذا الوسم تحديد عناصر الـ HTML الموجودة داخل جسم ملف الـ HTML </p><br>
+      <p><span class="ober1">لماذا نستخدم الحروف الصغيرة في الوسوم؟</span><br>منذ دقائق معدودة قلنا أن وسوم HTML غير حساسة لحالة الأحرف و هذا يجعل الوسم &lt;b&gt; يعني نفسه الوسم &lt;B&gt;.<br>و عند تصفحك للمواقع العديدة التي تقوم بشرح دروس الـ HTML سوف تلاحظ أن غالبية تلك المواقع تستخدم الحروف الكبيرة لكتابة وسوم الـ HTML في شرح أمثلتها... و قد تتساءل لماذا نستخدم نحن الحروف الصغيرة؟<br><br>الإجابة بسيطة جداً... و هو إذا كنت تريد أن تجهز نفسك و تعدها لأن تتعامل مع الأجيال القادمة من HTML يجب عليك أن تستخدم الحروف الصغيرة للوسوم. فجمعية World Wide Web Consortium " W3C " توصي باستخدام الحروف الصغيرة في كتابة الوسوم ضمن توصياتها لـ HTML 4 و إصدارة XHTML تتطلب استخدام الحروف الصغيرة.</p><br>
+      <p><span class="ober1">سمات الوسم :-</span><br>الوسوم يمكن أن تحتوي على سمات، تلك السمات تزودنا بمعلومات إضافية حول عناصر الـ HTML في صفحتك.<br><br>الوسم الذي يحدد عنصر الجسم في صفحتك هو: الوسم <body>. و بإضافة السمة bgcolor تستطيع أن تخبر المتصفح أن لون الخلفية لصفحتك هو اللون الأحمر كما بالمثال التالي:</p>
+        <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>&lt;body</font> <font color='#FF7F50'>bgcolor</font>=<font color='#449B45'>&quot;red&quot;</font><font color='#CD5C5C'>&gt;</font>
+        </code></pre>
+        <p>الوسم الذي يحدد الجداول في ملف الـ HTML هو: الوسم  &lt;table&gt;. و بإضافة السمة border يمكنك أن تخبر المتصفح أن هذا الجدول بدون حدود كما بالمثال التالي:</p>
+        <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>&lt;table</font> <font color='#FF7F50'>border</font>=<font color='#449B45'>&quot;0&quot;</font><font color='#CD5C5C'>&gt;</font>
+        </code></pre>
+        <p>السمات دائماً تأتي على شكل أسم أو قيمة و سواء كانت أسم أو قيمة فكلاهما تأخذ الشكل التالي:</p>
+        <pre class="has"><code class="hljs language-html">
+        name</font>=<font color='#449B45'>&quot;value&quot;</font><font color='#CD5C5C'></font>
+        </code></pre>
+        <p>السمات دائماً يتم إضافتها في وسم البداية لعنصر الـ HTML.</p><br>
+
+
+        <p><span class="ober1">نمط الأقواس :-</span></p>
+        <p>قيمة السمة دائماً يجب أحاطتها بأقواس الاقتباس " علامات التنصيص " أقواس الاقتباس المزدوجة هي الأكثر شيوعاً... و لكن هذا لا يمنع استخدام الأقواس المفردة. في بعض الحالات النادرة مثل أن تكون قيمة السمة تحتوي على علامة اقتباس يكون من الضروري استخدام علامات الاقتباس المفردة.</p>
+  </section>
+  <section class="btn-next-back">
+    <a href="study3.html" class="btn-next">التالي</a>
+    <a href="html1.html" class="btn-next">السابق</a>
+  </section><br>
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span>Omar farooq</span></p>
+        </div>
+      </footer>
+      
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>

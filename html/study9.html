@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="html1.css">
+  <meta name="viewport" content="width=device-width, intial-scale-1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+      </header>
+
+
+      <!-- Language -->
+      <section>
+      <div class="html">
+        <h2>قوائم الـ HTML</h2>
+        <p>لغة الـ HTML تدعم القوائم المرتبة و القوائم غير المرتبة و القوائم التوضيحية.</p><br>
+        <p><span class="ober1">القوائم غير المرتبة Unordered Lists :</span><br>القوائم غير المرتبة هي قوائم لبنود أو عناصر محددة ، قوائم البنود تكون معلمة بعلامة مميزة مثل الكرة الصغيرة ، " تشبه دائرة صغيرة سوداء ".<br>القوائم غير المرتبة تبدأ بالوسم &lt;ul&gt; ، على أن يبدأ كل بند من بنود القائمة بالوسم &lt;li&gt; كما يتضح من المثال التالي :</p><br>
+      
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#CD5C5C'>&lt;ul&gt;</font> 
+       <font color='#CD5C5C'>&lt;li&gt;</font>قهوة<font color='#CD5C5C'>&lt;li&gt;</font>
+       <font color='#CD5C5C'>&lt;li&gt;</font>حليب<font color='#CD5C5C'>&lt;li&gt;</font>
+    <font color='#CD5C5C'>&lt;/ul&gt;</font>
+
+    </pre></code>
+        </div>
+      </div>
+
+      <p><span class="ober1">و تظهر القائمة من خلال المتصفح بالشكل التالي :</span></p>
+      <ul>
+          <li>قهوة</li>
+          <li>حليب</li>
+      </ul>
+      <p>يمكنك وضع فقرات أو فواصل أسطر أو صور أو روابط أو قوائم أخرى ... الخ داخل عناصر القائمة.</p><br>
+
+
+    <p><span class="ober1">القوائم المرتبة Ordered Lists :</span><br>القوائم المرتبة هي أيضاً قوائم لبنود أو عناصر محددة ، لكن قوائم البنود المرتبة تكون معلمة بأرقام .<br>القوائم المرتبة تبدأ بالوسم &lt;ol&gt; ، على أن يبدأ كل بند من بنود القائمة بالوسم &lt;li&gt; كما يتضح من المثال التالي :</p><br>
+      
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+     <font color='#CD5C5C'>&lt;ol&gt;</font> 
+        <font color='#CD5C5C'>&lt;li&gt;</font>قهوة<font color='#CD5C5C'>&lt;li&gt;</font>
+        <font color='#CD5C5C'>&lt;li&gt;</font>حليب<font color='#CD5C5C'>&lt;li&gt;</font>
+     <font color='#CD5C5C'>&lt;/ol&gt;</font>
+
+    </pre></code>
+        </div>
+      </div>
+      <p><span class="ober1">و تظهر عبر المتصفح بالشكل التالي :</span></p>
+      <ol>
+        <li>قهوة</li>
+        <li>حليب</li>
+    </ol>
+    <p>يمكنك وضع فقرات أو فواصل أسطر أو صور أو روابط أو قوائم أخرى ... الخ داخل عناصر القائمة.</p><br>
+    <p><span class="ober1">القوائم التوضيحية Definition Lists :</span><br>القوائم التوضيحية ليست قوائم بنود و لكنها قوائم مصطلحات و شرح لتلك المصطلحات .<br>القوائم التوضيحية تبدأ بالوسم &lt;dl&gt; ، و كل مصطلح في القائمة يبدأ بالوسم &lt;dt&gt; ، و كل شرح توضيحي يبدأ بالوسم &lt;dd&gt; ، كما يتضح من المثال التالي:</p><br>
+      
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+    <font color='#CD5C5C'>&lt;dl&gt;</font>
+       <font color='#CD5C5C'>&lt;dt&gt;</font>قهوة<font color='#CD5C5C'>&lt;td&gt;</font>
+       <font color='#CD5C5C'>&lt;dd&gt;</font>القهوة مشروب منبه مضر بالصحة<font color='#CD5C5C'>&lt;td&gt;</font>
+       <font color='#CD5C5C'>&lt;dt&gt;</font>حليب<font color='#CD5C5C'>&lt;td&gt;</font>
+       <font color='#CD5C5C'>&lt;dd&gt;</font>الحليب مشروب طبيعي مفيد للكبار و الصغار<font color='#CD5C5C'>&lt;td&gt;</font>
+    <font color='#CD5C5C'>&lt;/dl&gt;</font>   
+    </pre></code>
+        </div>
+      </div>
+      <p><span class="ober1">و تظهر عبر المتصفح بالشكل التالي :</span></p>
+      <dl>
+        <dt>قهوة</dt>
+        <dd>القهوة مشروب منبه مضر بالصحة</dd>
+        <dt>حليب</dt>
+        <dd>الحليب مشروب طبيعي مفيد للكبار و الصغار</dd>
+      </dl><br>
+    <p>يمكنك وضع فقرات أو فواصل أسطر أو صور أو روابط أو قوائم أخرى ... الخ داخل الشرح بالقوائم التوضيحية.</p><br>
+
+      <p><span class="ober1">وسوم القوائم :<br></span></p>
+      <table id="customers">
+        <tr>
+            <th>Tag</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>&lt;ol&gt;</td>
+            <td>	لتحديد قائمة مرتبة " مرقمة ".</td>
+        </tr>
+        <tr>
+            <td>&lt;ul&gt;</td>
+            <td>	لتحديد قائمة غير مرتبة.</td>
+        </tr>
+        <tr>
+            <td>&lt;li&gt;</td>
+            <td>لتحديد عنصر قائمة.</td>
+        </tr>
+        <tr>
+            <td>&lt;dl&gt;</td>
+            <td>	لتحديد قائمة توضيحية.</td>
+        </tr>
+        <tr>
+            <td>&lt;dt&gt;</td>
+            <td>	لتحديد مصطلح مشروح.</td>
+        </tr>
+        <tr>
+            <td>&lt;dd&gt;</td>
+            <td>	لتحديد شرح للتعريف.</td>
+        </tr>
+        <tr>
+            <td>&lt;dir&gt;</td>
+            <td>	تم استبعاده استخدم &lt;ul&gt; بدلاً منه.</td>
+        </tr>
+        <tr>
+            <td>&lt;menu&gt;</td>
+            <td>	تم استبعاده استخدم &lt;ul&gt; بدلاً منه.</td>
+        </tr>
+    </table><br><br>
+      </section>
+      <section class="btn-next-back">
+        <a href="study10.html" class="btn-next">التالي</a>
+        <a href="study8.html" class="btn-next">السابق</a>
+      </section><br>
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span>Omar farooq</span></p>
+        </div>
+      </footer>
+      
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>
