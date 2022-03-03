@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css1.css">
+  <meta name="viewport" content="width=device-width, intial-scale-1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>HTML</title>
+</head>
+<body>
+
+    <!--menu & logo-->
+    <header>
+        <a href="#home" class="logo">Programming<font color="#4a90e2">-</font>school</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+          <li><a href="../index.html" onclick="toggleMenu();">الصفحه الرئيسية</a></li>
+          <li><a href="#services" onclick="toggleMenu();">مقدمة عن اللغة</a></li>
+          <li><a href="#tracks" onclick="toggleMenu();">اللغات</a></li>
+        </ul>
+      </header>
+
+
+      <!-- Language -->
+      <section>
+      <div class="html">
+        <h2>كيفية ادراج الـ CSS في الملفات</h2>
+        <p><span class="ober1">كيفية إدراج الأنماط الانسيابية CSS داخل صفحات HTML ؟</span><br>يمكنك إدراج الأنماط الانسيابية CSS داخل صفحات HTML بإحدى الطرق الثلاثة التالية :</p>
+        <p><span class="ober1">External Style Sheet :</span><br>تعد طريقة الملف الخارجي هي الأفضل عند تطبيقها على عدد كبير من الملفات ، حيث يمكنك إجراء تعديلات على طريقة عرض جميع الصفحات من خلال التعديل في ملف واحد فقط .<br>في هذه الطريقة يتم إدراج جميع أوامر CSS في ملف نصي يتم استدعاءه من خلال جميع صفحات الـ HTML عن طريق الأمر " link " و يجب أن يتم إدراج هذا الأمر في منطقة رأس الصفحة " head " ، كما بالمثال التالي :</p>
+
+        <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>&lt;head&gt;</font>
+            <font color='#CD5C5C'>&lt;link <font color='#FF7F50'>rel</font>=<font color='#449B45'>&quot;stylesheet&quot; <font color='#FF7F50'>type</font>=<font color='#449B45'>&quot;text/css&quot; <font color='#FF7F50'>href</font>=<font color='#449B45'>&quot;pro-school/style.css&quot;<font color='#CD5C5C'>&gt;</font></font></font></font></font>
+        <font color='#CD5C5C'>&lt;/head&gt;</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>متصفح الإنترنت سوف يقوم بقراءة النمط المحدد من الملف " style.css " و يقوم بتهيئة المستند وفقاً له .<br>ويمكنك تحرير ملف الـ CSS الخارجي بواسطة أي محرر نصوص على أن تقوم بإعطاءه الإمتداد " css. " كما بالمثال التالي :</p><br>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color='#CD5C5C'>hr <font color='#A4A5A5'>{color: sienna}</font></font>
+      <font color='#CD5C5C'>p <font color='#A4A5A5'>{margin-left: 20px}</font></font>
+      <font color='#CD5C5C'>body <font color='#A4A5A5'>{background-image: url("image/banner.jpg")}</font></font>
+    </pre></code>
+        </div>
+      </div>
+
+      <p><span class="ober1">لاحظ أن :</span><br>ملف الـ CSS يجب ألا يحتوي على أي وسم من وسوم الـ HTML .</p><br>
+      <p><span class="ober1">Internal Style Sheet :</span><br>أو embedded style sheets و هي تعني التضمين " الإدراج " داخل رأس الصفحة ، و يجب عليك استخدام النمط الداخلي في حالة تطبيقه على مستند وحيد ، حيث تقوم بتحديد النمط في رأس الصفحة " head " عن طريق استخدام الوسم &lt;style&gt; كما يلي :</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>&lt;head&gt;</font>
+          <font color='#CD5C5C'>&lt;style <font color='#FF7F50'>type</font>=<font color='#449B45'>&quot;text/css&quot;<font color='#CD5C5C'>&gt;</font></font></font></font></font>
+            <font color='#CD5C5C'>hr <font color='#A4A5A5'>{color: sienna}</font></font>
+            <font color='#CD5C5C'>p <font color='#A4A5A5'>{margin-left: 20px}</font></font>
+            <font color='#CD5C5C'>body <font color='#A4A5A5'>{background-image: url("image/banner.jpg")}</font></font>
+          <font color='#CD5C5C'>&lt;/style&gt;</font>
+        <font color='#CD5C5C'>&lt;/head&gt;</font>
+    </pre></code>
+        </div>
+      </div>
+      <p>متصفح الإنترنت سوف يقوم بقراءة النمط المحدد و يقوم بتهيئة المستند وفقاً له .</p><br>
+
+      <p><span class="ober1">لاحظ أن :<br></span>المتصفحات عموماً تقوم بتجاهل الوسوم غير المعرفة لديها ، و بالتالي فإن المتصفحات القديمة و التي لا تدعم الـ " style " سوف تتجاهل الوسم &lt;style&gt; ، و لكنها سوف تقوم بعرض محتويات الـ " style " داخل الصفحة و لتفادي تلك المشكلة يجب عليك وضع محتويات الـ " style " بين وسمي االتعليق كما يلي :</p><br><br>
+
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+      <font color='#CD5C5C'>&lt;head&gt;</font>
+        <font color='#CD5C5C'>&lt;style <font color='#FF7F50'>type</font>=<font color='#449B45'>&quot;text/css&quot;<font color='#CD5C5C'>&gt;</font></font></font></font></font>
+          <font color='#7B7D7D'>&lt;!--</font>
+          <font color='#CD5C5C'>hr <font color='#A4A5A5'>{color: sienna}</font></font>
+          <font color='#CD5C5C'>p <font color='#A4A5A5'>{margin-left: 20px}</font></font>
+          <font color='#CD5C5C'>body <font color='#A4A5A5'>{{background-image: url("image/banner.jpg")}</font></font>
+          <font color='#7B7D7D'>--&gt;</font>
+        <font color='#CD5C5C'>&lt;/style&gt;</font>
+      <font color='#CD5C5C'>&lt;/head&gt;</font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p><span class="ober1">Inline Styles:</span><br>في هذه الطريقة يتم إدراج أوامر CSS داخل أكواد HTML مباشرة ، فعلى سبيل المثال يمكنك أن تختار فقرة ما أو سطر ما داخل صفحة HTML لتطبق عليها التنسيق ، و تستخدم هذه الطريقة لإدراج تنسيق خاص لا يتكرر كثيراً أو لتغيير التنسيق المدرج في صفحة الأنماط الخارجية ، و سوف يتم استخدام كلمة style كمنتقى يرسل المتغير و القيمة مع الوسم المراد تنسيقه .</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>&lt;p <font color='#FF7F50'>style</font>=<font color='#449B45'>&quot;color: red;&quot;</font> <font color='#CD5C5C'>&gt;</font><font color='#A4A5A5'>الكتابة هنا تظهر باللون الأحمر</font><font color='#CD5C5C'>&lt;/style&gt;</font></font>
+    </pre></code>
+        </div>
+      </div>
+      <p>في المثال السابق قمنا بإنشاء فقرة عن طريق الأمر p داخل ملف HTML ، و تم إدراج خاصية style و تم تحديد المتغير color و الذي يحدد اللون ، ثم تم اختيار القيمة red و هي تعني الأحمر، و بذلك تظهر تلك الفقرة ملونة باللون الأحمر</p>
+
+
+      <p><span class="ober1">ملحوظة هامة :</span><br>في هذه الطريقة يتم إهمال الأقواس المعقوفة { } حيث أن النمط يعد جزء أساسي من كود الـ HTML .</p><br>
+
+      <p><span class="ober1">تعدد الأنماط :</span><br>و السؤال الذي يتبادر إلى الذهن الآن ماذا يحدث لو تم استخدام أكثر من نمط داخل الموقع الواحد كأن يتم إنشاء ملف CSS مستقل و يتم تضمينه داخل الصفحة ، و في ذات الوقت يتم إدارج نمط CSS embedded style sheet ضمن رأس الصفحة ، و كذلك أوامر CSS داخل وسم HTML بطريقة inline . في هذه الحالة سيتم إعطاء أولوية لتنفيذ الكود inline أولاً ، ثم يليه يتم تطبيق embedded style sheet أي أوامر css ضمن رأس الصفحة ، ثم سيطبق أوامر css في الملف الخارجي ، هذه هي أولوية التنفيذ، يجب أن تتذكرها دائماً .</p><br>
+
+      <p><span class="ober1">فكرة التوارث :</span><br>ذكرنا في الفقرة السابقة أن الصفحة الواحدة قد تحتوى على أكثر من نمط داخل الموقع الواحد و ذكرنا أيضاً أن المتصفح سوف يقوم باستخدام النمط الأقرب إلى الوسم كما يلي ( النمط الموجود داخل الوسم ، ثم النمط في رأس الصفحة ، ثم النمط الموجود في ملف خارجي ) . فعلى فرض أن الملف الخارجي حدد نمط الفقرة كما يلي :<br>حدد لون الخط بالقيمة " أزرق " و حدد حجم الخط بالقيمة " 2 " ، بينما النمط في رأس الصفحة حدد لون الخط بالقيمة " أخضر " و حدد المحاذاة بالقيمة " الوسط " ، بينما النمط داخل الوسم حدد لون الخط بالقيمة " أحمر " .<br>كيف يتم عرض الصفحة في هذه الحالة : كما عرفنا فإن لون الخط سيكون الأحمر لأن هذه هي القيمة الأقرب للوسم ، ثم يتم تطبيق القيمة النمط براس الصفحة و هذا يعني أن محاذاة الخط ستكون إلى الوسط ، ثم تطبيق النمط بالملف الخارجي أي أن حجم الخط سيعطى القيمة " 2 " . هذه هي فكرة التوارث أي استيراد التنسيقات من الأنماط البعيدة إذا لم تكن محددة داخل النمط الأقرب .</p><br>
+
+
+      <p><span class="ober1">مثال :</span><br></p><br>
+        <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+       <font color='#CD5C5C'>h3 <font color='#A4A5A5'>{
+                    color: blue;
+                    font-size: 12px
+                    }</font></font>
+    </pre></code>
+        </div>
+      </div>
+
+      
+      <p>ثم تحرير ملف HTML و إضافة الأنماط حيث ام تحديد اللون بالأخضر و محازاة النص إلى الوسط كما يلي :</p>
+      <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html">
+        <font color='#CD5C5C'>h3 <font color='#A4A5A5'>{
+                    color: green;
+                    text-align: center;
+                    }</font></font>
+    </pre></code>
+        </div>
+      </div>
+
+
+      <p>في هذه الحالة سوف يتم تطبيق النمط كما يلي لون الخط أخضر و محازاة النص إلى الوسط و حجم الخط 12 بكسل .</p>
+        <div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 800px;" id="article_content">
+        <div class="htmledit_views">
+      <pre class="has"><code class="hljs language-html"> <font color='#A4A5A5'>
+            color:green;
+            text-align: center;
+            font-size: 12px</font>
+      </pre></code>
+        </div>
+      </div>
+
+
+
+      
+      
+      </section>
+      <section class="btn-next-back">
+        <a href="study4.html" class="btn-next">التالي</a>
+        <a href="study2.html" class="btn-next">السابق</a>
+      </section><br>
+      <!--Copy-Rigth-->
+      <footer>
+        <div class="footer-content">
+          <h3>PROGRA<font color="#4a90e2">MM</font>ING SCHOOL</h3>
+          <p>Made with <font color="red">♥</font> in Iraq</p>
+          <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100046995433846"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://t.me/tttttz"><i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://www.instagram.com/i7i.4/"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>cobyrigth &copy;2021 Pro-School. designed by <span>Omar farooq</span></p>
+        </div>
+      </footer>
+
+      <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+          var header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 0);
+        })
+        function toggleMenu(){
+          var menuToggle = document.querySelector('.toggle');
+          var menu = document.querySelector('.menu');
+          menuToggle.classList.toggle('active')
+          menu.classList.toggle('active')
+        }
+        </script>
+</body>
+</html>
