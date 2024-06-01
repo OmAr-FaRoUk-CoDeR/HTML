@@ -26,7 +26,7 @@
         </div>
         <div class="reservation-form">
             <h2>حجز المنتج</h2>
-            <form action="/submit" method="POST">
+            <form id="reservation-form">
                 <label for="full-name">الاسم الكامل</label>
                 <input type="text" id="full-name" name="full-name" required>
 
@@ -36,16 +36,57 @@
                 <label for="phone-number">رقم الهاتف</label>
                 <div class="phone-input-container">
                     <span class="country-code">+964</span>
-                    <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{10}" required>
+                    <input type="tel" id="phone-number" name="phone-number" pattern="[0-9]{11}" required>
                 </div>
                 
                 <label for="quantity">عدد القطع</label>
                 <input type="number" id="quantity" name="quantity" required>
                 
-                <button type="submit">إرسال</button>
+                <button type="submit" onclick="submitForm()">إرسال</button>
                 <p class="privacy-note">نحترم خصوصيتك وسنحافظ على سرية معلوماتك.</p>
             </form>
         </div>
     </div>
+    <script>
+        function submitForm() {
+            const fullName = document.getElementById('full-name').value;
+            const location = document.getElementById('full-location').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+            const quantity = document.getElementById('quantity').value;
+
+            const message = `الاسم الكامل: ${fullName}
+العنوان: ${location}
+رقم الهاتف: ${phoneNumber}
+عدد القطع: ${quantity}`;
+
+            const botToken = '5965678266:AAGpML5E_oS53VsSULpBgYRuMr9Mtkpp1ow'; // احصل على توكن البوت من BotFather في تيليجرام
+            const chatId = '6217513559'; // احصل على chat ID من البوت الخاص بك
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            const data = new URLSearchParams();
+            data.append('chat_id', chatId);
+            data.append('text', message);
+
+            fetch(url, {
+                method: 'POST',
+                body: data,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Message sent to Telegram bot:', data);
+                alert('تم إرسال البيانات بنجاح إلى بوت Telegram!');
+            })
+            .catch(error => {
+                console.error('There was an error sending message to Telegram bot:', error);
+                alert('حدث خطأ أثناء إرسال البيانات إلى بوت Telegram. الرجاء المحاولة مرة أخرى لاحقًا.');
+            });
+        }
+    </script>
+
 </body>
 </html>
