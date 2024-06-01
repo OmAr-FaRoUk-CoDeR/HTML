@@ -15,7 +15,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     direction: ltr; 
     font-family: var(--ff-arabic);
 }
@@ -144,25 +143,45 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
     }
 
     .product-info, .reservation-form {
         border-left: none;
-        
     }
 
     .reservation-form {
-        text-align: center; 
+        text-align: center;
         border-radius: 12px;
     }
 
     .reservation-form form {
         align-items: center;
     }
+
     .reservation-form label {
-        align-self: center; 
+        align-self: center;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .product-info, .reservation-form {
+        padding: 10px;
+    }
+
+    .reservation-form input {
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    .privacy-note {
+        font-size: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
