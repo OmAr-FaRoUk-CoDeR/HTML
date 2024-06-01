@@ -144,7 +144,7 @@ body {
 
 
 
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 320px) {
     .product-info, .reservation-form {
         padding: 5px;
     }
@@ -171,7 +171,7 @@ body {
     }
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 480px) {
     .product-info, .reservation-form {
         padding: 15px;
     }
@@ -198,6 +198,34 @@ body {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .product-info, .reservation-form {
+        padding: 15px;
+    }
+
+    .reservation-form input {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .privacy-note {
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .product-description h1 {
+        font-size: 24px;
+    }
+
+    .product-description p {
+        font-size: 16px;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -221,22 +249,95 @@ body {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 992px) {
+    .container {
+        flex-direction: row;
+    }
+
     .product-info, .reservation-form {
-        padding: 10px;
+        padding: 20px;
     }
 
     .reservation-form input {
-        padding: 8px;
-        margin-bottom: 15px;
+        padding: 12px;
     }
 
     .privacy-note {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .logo {
+        font-size: 24px;
+    }
+
+    .product-description h1 {
+        font-size: 26px;
+    }
+
+    .product-description p {
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .product-info, .reservation-form {
+        padding: 25px;
+    }
+
+    .reservation-form input {
+        padding: 14px;
+    }
+
+    .privacy-note {
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .product-description h1 {
+        font-size: 28px;
+    }
+
+    .product-description p {
         font-size: 20px;
+    }
+}
+
+
+@media screen and (min-width: 1201px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .product-info, .reservation-form {
+        padding: 30px;
+    }
+
+    .reservation-form input {
+        padding: 16px;
+    }
+
+    .privacy-note {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .product-description h1 {
+        font-size: 30px;
+    }
+
+    .product-description p {
+        font-size: 22px;
     }
 }
 
